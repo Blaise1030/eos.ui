@@ -40,7 +40,11 @@ export default function () {
         {class: "flex flex-row space-x-4"},
         Button({href: "/#/docs/accordian"}, escHtml`Get Started`),
         Button(
-          {variant: "outline"},
+          {
+            variant: "outline",
+            href: "https://github.com/Blaise1030/eos.ui",
+            target: "_blank",
+          },
           span({class: "pr-2"}, githubIcon),
           escHtml`Github`
         )

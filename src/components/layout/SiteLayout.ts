@@ -16,7 +16,7 @@ const router = [
   },
   {
     title: "Github",
-    path: "https://www.google.com",
+    path: "https://github.com/Blaise1030/eos.ui",
     selected: "false",
   },
 ];
