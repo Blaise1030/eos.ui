@@ -9,18 +9,21 @@
   <title>eos.ui</title>
   <meta name="description" content="Reusable Tailwind Components build for Alpine JS" />
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/htmx.org@1.9.6"></script>
 </head>
 
-<body un-cloak x-bind:class="{ 'dark': theme === 'dark' }"
-  class="bg-background text-foreground border-border scroll-smooth" x-bind:data-theme="theme" x-data="{ 
-        theme :localStorage.getItem('theme') ?? 'light', 
-        setTheme(t){
-          this.theme = t;
-          localStorage.setItem('theme', t);
-        }
-     }">
+<body class="bg-background text-foreground border-border scroll-smooth" x-bind:class="currentColorMode"
+  x-init="setTheme(theme)" x-bind:data-theme="currentColorMode" x-data="{
+    theme: localStorage.getItem('theme') || localStorage.setItem('theme', 'system'),
+    currentColorMode: '',
+    setTheme(t){
+      this.theme = t;
+      this.currentColorMode = (this.theme === 'dark' || Boolean(this.theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) ?'dark':'light'
+      localStorage.setItem('theme', t);      
+    }
+  }">
   <router-outlet></router-outlet>
   <script type="module" src="/src/main.ts"></script>
 </body>

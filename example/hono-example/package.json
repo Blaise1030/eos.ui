@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "start": "tsx --watch src/index.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.2.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "hono": "^3.10.0",
+    "path": "^0.12.7",
+    "structr-composer": "^1.0.9",
+    "tailwind-merge": "^2.0.0"
+  },
+  "devDependencies": {
+    "tsx": "^3.12.2"
+  }
+}

@@ -98,7 +98,6 @@ export default function () {
         ],
       })
     ),
-
     DocumentationTableOfContents({documentationList})
   );
 }

@@ -1,12 +1,12 @@
 import {div, escHtml} from "structr-composer";
-import Button from "@/components/Button";
-import cn from "@/components/utils/cn";
+import Button from "./Button";
+import cn from "./utils/cn";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/DropdownMenu";
+} from "./DropdownMenu";
 
 export default function DarkModeToggle(c?: {[x: string]: string}) {
   return DropdownMenu(

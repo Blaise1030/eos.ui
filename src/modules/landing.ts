@@ -30,7 +30,7 @@ export default function () {
       {class: "flex flex-col space-y-4 py-8"},
       h1(
         {class: "font-bold text-5xl tracking-tighter"},
-        escHtml`Reusable Components for Alpine.`
+        escHtml`Reusable Components for AlpineJS.`
       ),
       p(
         {class: "max-w-2xl text-xl text-muted-foreground"},

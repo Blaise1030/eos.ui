@@ -6,6 +6,10 @@ import ButtonDoc from "./button";
 import BadgeDoc from "./badge";
 import BannerDoc from "./banner";
 import CardDoc from "./card";
+import DialogDoc from "./dialog";
+import MoreDoc from "./more";
+import DarkModeVite from "./dark-mode/vite";
+import DarkModeHono from "./dark-mode/hono";
 
 const component = {
   accordian: AccordianDoc(),
@@ -13,8 +17,12 @@ const component = {
   button: ButtonDoc(),
   badge: BadgeDoc(),
   card: CardDoc(),
+  dialog: DialogDoc(),
   introduction: IntroductionDoc(),
   installation: InstallationDoc(),
+  "dark-mode-vite": DarkModeVite(),
+  "dark-mode-hono": DarkModeHono(),
+  more: MoreDoc(),
 };
 
 export const docsRouter: {path: string; template: string; title: string}[] =

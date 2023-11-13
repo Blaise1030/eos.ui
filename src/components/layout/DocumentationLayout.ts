@@ -36,6 +36,19 @@ export const router = [
     ],
   },
   {
+    title: "Dark Mode",
+    children: [
+      {
+        path: "dark-mode-vite",
+        title: "Vite",
+      },
+      {
+        path: "dark-mode-hono",
+        title: "SSR",
+      },
+    ],
+  },
+  {
     title: "Components",
     children: [
       {
@@ -57,6 +70,14 @@ export const router = [
       {
         path: "card",
         title: "Card",
+      },
+      {
+        path: "dialog",
+        title: "Dialog",
+      },
+      {
+        path: "more",
+        title: "More...",
       },
     ],
   },

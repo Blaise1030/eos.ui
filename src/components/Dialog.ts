@@ -28,7 +28,7 @@ export function DialogOverlay(d: {[x: string]: string} & {value: string}) {
       "@click": `${d.value} = false`,
       "x-show": `${d.value}`,
       class: cn([
-        "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+        "fixed inset-0 z-[99998] bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
         d.class,
       ]),
     },
@@ -40,34 +40,41 @@ export function DialogContent(
   d: {[x: string]: string} & {value: string},
   ...children: HtmlEscapedString[]
 ) {
-  return escHtml`${DialogOverlay({value: d.value})}
-  ${div(
-    {
-      ...d,
-      "x-bind:data-state": `${d.value} ? 'open': 'closed'`,
-      "x-show": `${d.value}`,
-      class: cn([
-        "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg md:w-full border-border",
-        d.class,
-      ]),
-    },
-    div(
+  return escHtml`
+  <template x-teleport="body">
+    ${DialogOverlay({value: d.value})}
+  </template>
+  <template x-teleport="body">
+    ${div(
       {
-        class: "relative w-full h-full",
+        ...d,
+        "x-bind:data-state": `${d.value} ? 'open': 'closed'`,
+        "x-trap.inert.noscroll": `${d.value}`,
         "x-show": `${d.value}`,
+        class: cn([
+          "fixed left-[50%] top-[50%] z-[99999] grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg md:w-full border-border",
+          d.class,
+        ]),
       },
-      Button(
+      div(
         {
-          class: "absolute right-0 top-0 h-5 w-5 z-10 text-muted-foreground",
-          "@click": `${d.value}=false`,
-          variant: "outline",
-          size: "icon",
+          class: "relative w-full h-full",
+          "x-show": `${d.value}`,
         },
-        closeButton
-      ),
-      ...children
-    )
-  )}`;
+        Button(
+          {
+            class: "absolute right-0 top-0 h-5 w-5 z-10 text-muted-foreground",
+            "@click": `${d.value}=false`,
+            variant: "outline",
+            size: "icon",
+          },
+          closeButton
+        ),
+        ...children
+      )
+    )}
+  </template>
+  `;
 }
 
 export function DialogHeader(
