@@ -4,7 +4,6 @@ import {
   div,
   escHtml,
   header,
-  p,
   span,
 } from "structr-composer";
 import DarkModeToggle from "../DarkModeToggle";

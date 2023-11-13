@@ -1,5 +1,5 @@
 import {DocumentationHeader} from "@/components/layout/DocumentationLayout";
-import {a, div, escHtml, p, span} from "structr-composer";
+import {a, div, escHtml, span} from "structr-composer";
 
 export default function () {
   return div(
