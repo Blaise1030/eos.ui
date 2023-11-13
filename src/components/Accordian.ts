@@ -24,7 +24,7 @@ export function AccordianItem(
   return div(
     {
       "x-data": `{ id: ${id} }`,
-      class: "cursor-pointer group border-b-1 border-border",
+      class: "cursor-pointer group border-b",
     },
     ...children
   );

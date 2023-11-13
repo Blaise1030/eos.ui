@@ -18,7 +18,7 @@ const INSTALLATION_METHODS = [
 
 export default function () {
   return div(
-    {class: "flex space-x-8", "x-data": "{tab: 'client'}"},
+    {class: "flex space-x-8 min-h-screen", "x-data": "{tab: 'client'}"},
     div(
       {class: "flex flex-col space-y-8 w-full md:min-w-3xl"},
       DocumentationHeader({
@@ -30,13 +30,13 @@ export default function () {
         ...INSTALLATION_METHODS.map(({icon, title, id}) =>
           Card(
             {
-              class: "p-6 hover:bg-muted cursor-pointer",
+              class: "sm:p-6 p-4 hover:bg-muted cursor-pointer",
               "@click": `tab = '${id}'`,
             },
             div(
-              {class: "flex flex-col items-center space-y-2"},
+              {class: "flex flex-col items-center space-y-2 justify-center"},
               span(icon),
-              p({class: "text-sm"}, escHtml`${title}`)
+              p({class: "text-sm text-center"}, escHtml`${title}`)
             )
           )
         )

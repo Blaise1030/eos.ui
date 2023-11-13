@@ -1,8 +1,5 @@
 import {a, div, escHtml, h2, p} from "structr-composer";
-import {
-  DocumentationTableOfContents,
-  DocumentationHeader,
-} from "@/components/layout/DocumentationLayout";
+import {DocumentationHeader} from "@/components/layout/DocumentationLayout";
 import {
   Accordian,
   AccordianContent,
@@ -62,9 +59,9 @@ Since all components here generate HTML-escaped strings, they are usable for bot
 
 export default function () {
   return div(
-    {class: "flex space-x-8"},
+    {class: "flex space-x-8 min-h-screen"},
     div(
-      {class: "flex flex-col space-y-8 w-full md:min-w-3xl"},
+      {class: "flex flex-col space-y-8 w-full"},
       DocumentationHeader({
         description: COMPONENT_DESCRIPTION,
         title: COMPONENT_NAME,
@@ -92,9 +89,6 @@ export default function () {
           )
         )
       )
-    ),
-    DocumentationTableOfContents({
-      documentationList: [{id: "faq", title: "FAQ"}],
-    })
+    )
   );
 }

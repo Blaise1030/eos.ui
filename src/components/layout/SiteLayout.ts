@@ -1,6 +1,5 @@
 import {HtmlEscapedString, a, div, escHtml, header} from "structr-composer";
 import DarkModeToggle from "../DarkModeToggle";
-import Button from "../Button";
 import PageFooter from "../modules/PageFooter";
 
 const router = [
@@ -28,7 +27,7 @@ export default function (children: HtmlEscapedString) {
     "flex flex-row justify-between w-full items-center max-w-7xl mx-auto px-4 py-2 ";
 
   return div(
-    {class: "w-full"},
+    {class: "w-full min-h-screen"},
     header(
       {class: navBarClass},
       div(
@@ -43,10 +42,11 @@ export default function (children: HtmlEscapedString) {
             escHtml`eos.ui`
           ),
           ...(router || []).map(({title, path, selected}) =>
-            Button(
+            a(
               {
-                ":class": `${selected} ? 'font-medium!': 'text-muted-foreground!' `,
-                class: "p-0 justify-start h-fit font-normal hidden md:block",
+                ":class": `${selected} ? 'font-medium': 'text-muted-foreground' `,
+                class:
+                  "p-0 justify-start h-fit font-normal hidden md:block text-sm hover:underline",
                 variant: "link",
                 href: `${path}`,
               },
