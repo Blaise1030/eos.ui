@@ -69,15 +69,15 @@ export const serverSideSetup = [
     codeString: buttonFile,
   },
   {
-    id: "create-folder",
-    description: "You should have this folder structure by now",
-    codeString: PROJECT_FOLDER_STRUCTURE,
-  },
-  {
-    id: "update-index.html",
+    id: "create-page-template",
     description: "Create pageTemplate.ts",
     page: "src/components/pageTemplate.ts",
     codeString: rawFile,
+  },
+  {
+    id: "create-folder",
+    description: "You should have this folder structure by now",
+    codeString: PROJECT_FOLDER_STRUCTURE,
   },
   {
     id: "update-index.ts",
