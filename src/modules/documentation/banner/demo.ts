@@ -5,7 +5,7 @@ import {a, div, escHtml, span, strong} from "structr-composer";
 const closeButton = escHtml`<svg class='h-3 w-3' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-full h-full"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>`;
 export default function BannerDemo() {
   const bannerStyle =
-    "flex items-center justify-between w-full h-full px-3 mx-auto max-w-7xl py-1";
+    "flex items-center justify-between w-full h-full px-3 mx-auto max-w-[1350px] py-1";
   return Banner(
     {isFixed: false},
     div(

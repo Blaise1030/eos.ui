@@ -3,7 +3,7 @@ import {a, div, escHtml, span} from "structr-composer";
 
 export default function () {
   return div(
-    {class: "flex flex-col h-full"},
+    {class: "flex flex-col min-h-screen h-full"},
     DocumentationHeader({
       title: "More components...",
       description: "Documentation needs more time !",

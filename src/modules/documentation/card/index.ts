@@ -50,7 +50,7 @@ Card({},
 
 export default function () {
   return div(
-    {class: "flex space-x-8"},
+    {class: "flex space-x-8 w-full"},
     div(
       {class: "flex flex-col space-y-8 w-full"},
       DocumentationHeader({

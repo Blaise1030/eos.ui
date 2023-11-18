@@ -85,7 +85,7 @@ export const router = [
 
 function DocumentationSidebar() {
   return aside(
-    {class: "sticky top-[72px] min-w-[200px] h-screen lg:flex hidden"},
+    {class: "sticky top-24 min-w-[200px] h-screen lg:flex hidden"},
     div(
       {class: "px-4 xl:pl-0 pl-4 h-full overflow-y-auto"},
       ...(router || [])?.map(({children, title}) =>
@@ -116,10 +116,10 @@ export function DocumentationLayout() {
   return div(
     {class: "w-full animate-fadeIn", "un-cloak": ""},
     div(
-      {class: "flex m-auto p-4 max-w-7xl"},
+      {class: "flex m-auto max-w-[1350px] px-4"},
       DocumentationSidebar(),
       div(
-        {class: "pb-16 w-full relative max-w-3xl"},
+        {class: "pb-16 w-full relative max-w-5xl pt-[38px]"},
         escHtml`<router-outlet></router-outlet>`
       )
     )
@@ -260,7 +260,7 @@ export function DocumentationTableOfContents({
   documentationList: TDocumentationLink[];
 }) {
   return aside(
-    {class: "sticky top-[72px] right-0 h-screen xl:block hidden min-w-[250px]"},
+    {class: "sticky top-16 right-0 h-screen xl:block hidden min-w-[250px]"},
     div(
       {class: "h-full overflow-y-auto px-4"},
       Label({}, escHtml`On This Page`),

@@ -33,7 +33,7 @@ export default function (children: HtmlEscapedString) {
   const navBarClass =
     "border-b sticky top-0 left-0 bg-background/90 border-border z-20 backdrop-blur-sm";
   const navBarContainerClass =
-    "flex flex-row justify-between w-full items-center max-w-7xl mx-auto px-4 py-2 ";
+    "flex flex-row justify-between w-full items-center max-w-[1350px] mx-auto px-4 py-2 ";
 
   return div(
     {class: "w-full min-h-screen"},
@@ -54,9 +54,9 @@ export default function (children: HtmlEscapedString) {
           ...(router || []).map(({title, path, selected}) =>
             a(
               {
-                ":class": `${selected} ? 'font-medium': 'text-muted-foreground' `,
+                ":class": `${selected} ? '': 'text-muted-foreground' `,
                 class:
-                  "p-0 justify-start h-fit font-normal hidden md:block text-sm hover:underline",
+                  "p-0 justify-start h-fit font-medium hidden md:block text-sm hover:underline",
                 variant: "link",
                 href: `${path}`,
               },
@@ -68,11 +68,12 @@ export default function (children: HtmlEscapedString) {
           {class: "flex items-center space-x-1"},
           Button(
             {
+              href: "https://github.com/Blaise1030/eos.ui",
+              "aria-label": "Github Link",
+              class: "w-8 h-8",
+              target: "_blank",
               variant: "ghost",
               size: "icon",
-              class: "w-8 h-8",
-              href: "https://github.com/Blaise1030",
-              target: "_blank",
             },
             githubIcon
           ),
