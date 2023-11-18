@@ -53,6 +53,7 @@ export default function DemoFrame() {
       },
       div({class: "h-full w-full bg-muted animate-pulse absolute top-0"}),
       iframe({
+        scrolling: "no",
         class:
           "text-muted-foreground text-xl h-full w-full text-center overflow-hidden hide-scrollbar z-10 absolute",
         ":title": "getSelectedSource()?.title",
