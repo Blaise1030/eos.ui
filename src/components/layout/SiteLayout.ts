@@ -45,11 +45,7 @@ export default function (children: HtmlEscapedString) {
           {class: "flex flex-row space-x-6 items-center"},
           a(
             {class: "mr-2 flex items-end pb-1", href: "/#/"},
-            span({class: "font-bold font-normal text-xl"}, escHtml`ε`),
-            span(
-              {class: "font-medium tracking-tighter pb-[0.8px]"},
-              escHtml`os.ui`
-            )
+            span({class: "font-medium tracking-tighter"}, escHtml`εos.ui`)
           ),
           ...(router || []).map(({title, path, selected}) =>
             a(
