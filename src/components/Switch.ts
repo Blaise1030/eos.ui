@@ -1,18 +1,15 @@
-import {button, escHtml, input, span} from "structr-composer";
+import {button, div, escHtml, input, span} from "structr-composer";
 import cn from "@/components/utils/cn";
-import Stack from "@/components/Stack";
 
 export function Switch(c: {[x: string]: string} & {value: string}) {
-  return Stack(
-    {
-      class: cn(["items-center justify-center space-x-2", c.class]),
-      direction: "row",
-    },
+  return div(
+    {class: cn(["flex items-center justify-center space-x-2", c.class])},
     input({
       ":checked": c?.value,
       type: "checkbox",
       name: "switch",
       class: "hidden",
+      id: c?.id,
     }),
     button(
       {

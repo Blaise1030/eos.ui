@@ -52,7 +52,7 @@ export function HoverCardContent(
       "x-show": "hoverCardHovered",
       "x-cloak": "",
       class: cn([
-        "absolute top-0 w-[365px] max-w-lg mt-5 z-30 translate-y-3 left-0",
+        "absolute top-1 w-[365px] max-w-lg mt-5 z-30 translate-y-3 left-0",
         p?.class ?? "",
       ]),
     },
@@ -61,7 +61,7 @@ export function HoverCardContent(
         "x-show": "hoverCardHovered",
         "x-transition": "",
         class:
-          "w-[full] h-auto bg-background space-x-3 p-5 flex items-start rounded-md shadow-sm border border-border",
+          "w-[full] h-auto bg-background space-x-3 p-5 flex items-start rounded-xl shadow-sm border border-border",
       },
       ...children
     )

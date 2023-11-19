@@ -58,7 +58,7 @@ export function DropdownMenuContent(
 }
 
 export function DropdownMenuDivider() {
-  return div({class: "w-full h-0.5 bg-muted w-full my-1"});
+  return div({class: "w-full h-[1.5px] bg-muted w-full my-1"});
 }
 
 export function DropdownMenuItem(

@@ -76,6 +76,30 @@ export const router = [
         title: "Dialog",
       },
       {
+        path: "dropdown",
+        title: "Dropdown Menu",
+      },
+      {
+        path: "hover-card",
+        title: "Hover Card",
+      },
+      {
+        path: "inputs",
+        title: "Inputs",
+      },
+      {
+        path: "popover",
+        title: "Popover",
+      },
+      {
+        path: "switch",
+        title: "Switch",
+      },
+      {
+        path: "tabs",
+        title: "Tabs",
+      },
+      {
         path: "more",
         title: "More...",
       },
