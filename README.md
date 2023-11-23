@@ -2,6 +2,7 @@
 A re-usable, composable components for Alpine JS & HTML first applications.
 <br>
 <br>
+![Screenshot](screenshot.png)
 <br>
 ## Overview
 
